@@ -4,7 +4,7 @@ import classes from "./AuthForm.module.css";
 import AuthContext from "../../store/auth-contex";
 
 const AuthForm = () => {
-  const authCtx = useContext(AuthContext)
+  const authCtx = useContext(AuthContext);
 
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
@@ -42,6 +42,7 @@ const AuthForm = () => {
     //       return res.json().then((data) => {
     //         console.log(data);
     //         console.log("Token ID: ", data.idToken);
+    //         authCtx.login(data.idToken);
     //       });
     //     } else {
     //       return res.json().then((data) => {
@@ -122,7 +123,7 @@ const AuthForm = () => {
       .then((data) => {
         // console.log(data);
         // console.log("Token ID is: ", data.idToken);
-        authCtx.login(data.idToken)
+        authCtx.login(data.idToken);
       })
       .catch((err) => {
         alert(err.message);
