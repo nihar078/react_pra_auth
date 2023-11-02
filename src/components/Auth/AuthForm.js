@@ -127,6 +127,7 @@ const AuthForm = () => {
         // console.log("Token ID is: ", data.idToken);
         authCtx.login(data.idToken);
         history.replace("/");
+        setInterval(authCtx.logout, 300000)
       })
       .catch((err) => {
         alert(err.message);
